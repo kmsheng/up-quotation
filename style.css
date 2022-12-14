@@ -2,10 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-.logo {
+:root {
+  --primary-color: #dd461c;
+  --primary-link-color: #e94515;
 }
 
-header,
-.container {
-  width: 912px;
+@font-face {
+  font-family: 'Constantia';
+  src: url(./assets/fonts/constan.ttf);
+}
+
+@layer components {
+  .icon-link {
+    @apply flex items-center text-[var(--primary-link-color)] whitespace-nowrap
+      rounded-full border border-[var(--primary-link-color)] px-3 py-1 text-sm
+      font-['Roboto'] font-medium;
+  }
+  .btn-auth {
+    @apply flex items-center whitespace-nowrap text-[#606060] px-4 text-sm;
+  }
+  .btn-primary {
+    @apply bg-[var(--primary-color)] text-[#fff1ea] rounded-full px-4 py-1 border border-gray-400;
+    box-shadow: 0 -1px 11px 5px rgb(131 131 131 / 75%);
+  }
+  .btn {
+    @apply text-[var(--primary-color)] bg-white rounded-full px-4 py-1;
+    box-shadow: 0 -1px 11px 5px rgb(131 131 131 / 75%);
+  }
+  .logo {
+  }
+  .title-rect:before {
+    position: relative;
+    top: 1px;
+    left: -30px;
+    display: inline-block;
+    content: '';
+    width: 12px;
+    height: 40px;
+    background: var(--primary-link-color);
+  }
+}
+
+@layer utilities {
+  .color-primary {
+    color: var(--primary-link-color);
+  }
+  .bg-primary {
+    background: var(--primary-link-color);
+  }
+  .border-primary {
+    border-color: var(--primary-link-color);
+  }
+  .border-l-16 {
+    border-left-width: 16px;
+  }
+  .container {
+    @apply mx-auto;
+  }
 }
